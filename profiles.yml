@@ -1,0 +1,36 @@
+dbtsnowflake:
+  outputs:
+    dev:
+      account: ndwlmsv-pq75709
+      database: AIRBNB
+      password: dbtPassword123
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+lessons:
+  outputs:
+    dev:
+      dataset: dbt_jack
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: lucky-triode-387520
+      threads: 60
+      type: bigquery
+    production:
+      dataset: dbt_production
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: lucky-triode-387520
+      threads: 60
+      type: bigquery
+  target: dev
